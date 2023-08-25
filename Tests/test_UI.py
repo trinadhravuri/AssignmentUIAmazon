@@ -1,3 +1,5 @@
+import logging
+
 import pytest
 from selenium import webdriver
 import time
@@ -10,20 +12,25 @@ from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.select import Select
+from  logger import Logger
 @pytest.mark.usefixtures('invoke_browser')
 class Base:
     pass
 
+log = Logger(__name__,logging.INFO)
 
 class TestUI(Base):
 
     five_star_li = []
 
     def test_verify_google(self):
+        log.logger.info('Launching chrome browser and generating log')
         self.driver.get(read_conf('urls','google'))
         title = self.driver.title
+        log.logger.info('taking the page title to verify')
         print(title)
         assert title == read_conf('titles','google_home')
+        log.logger.info('title verified successfully')
 
     def test_enter_search_amazon(self):
         self.driver.find_element(By.XPATH,read_conf('locators','google_search')).send_keys('amazon.in')
