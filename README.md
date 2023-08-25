@@ -23,3 +23,6 @@ I created a pytest add option mechanism for multiple browser test functionality
 
 i created a logger for generating dynamic logs for all the test cases where we need to get log
 
+I generated allure reports from the allure-pytest package importd from pypi.
+i created a directory for allure reports and html reports
+we can get the reports by serving allure folder with allure serve <path>
