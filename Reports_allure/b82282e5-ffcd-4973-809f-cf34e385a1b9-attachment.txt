@@ -1,0 +1,3 @@
+[32mINFO    [0m test_UI:test_UI.py:27 Launching chrome browser and generating log
+[32mINFO    [0m test_UI:test_UI.py:30 taking the page title to verify
+[32mINFO    [0m test_UI:test_UI.py:33 title verified successfully
