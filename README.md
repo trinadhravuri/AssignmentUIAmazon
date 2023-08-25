@@ -18,3 +18,8 @@ I am creating a method which takes the screenshot when required having args:
         driver object and the path where the image file have to be stored and 
             the image file name is dynamic with the help of current time 
             which replaces the ':' to "_" with PNG extension
+
+I created a pytest add option mechanism for multiple browser test functionality
+
+i created a logger for generating dynamic logs for all the test cases where we need to get log
+
