@@ -33,25 +33,36 @@ class TestUI(Base):
         log.logger.info('title verified successfully')
 
     def test_enter_search_amazon(self):
+        log.logger.info('searching for amazon.in in google search')
         self.driver.find_element(By.XPATH,read_conf('locators','google_search')).send_keys('amazon.in')
+        log.logger.info('waiting time')
         self.driver.implicitly_wait(3)
         self.driver.find_element(By.XPATH,read_conf('locators','google_button')).click()
         title = self.driver.title
+        log.logger.info('gathering title information title is {}'.format(title))
         print(title)
         assert title == read_conf('titles','google_search_amazon')
+        log.logger.debug('This often loading fast and often loading slow')
+        log.logger.error('and so the title is not matching with just a "." dot in amazon.in')
 
     def test_print_all_test_results(self):
+        log.logger.info('genereating all the links')
         links = self.driver.find_elements(By.TAG_NAME,'a')
         for link in links:
             print(link.text)
 
     def test_click_amazon(self):
+        log.logger.info('getting amazon home screen')
         self.driver.get(read_conf('urls','amazon'))
         title = self.driver.title
         capture_screenshot(self.driver,'../Screenshots/')
+        log.logger.info(f'taking screenshot {title}')
         assert title == read_conf('titles','amazon_home')
+        log.logger.info(f'verifying the title')
 
     def test_signin_amazon(self):
+        #log.logger.info('Now time to have some selenium fun zone ')
+        log.logger.info('hovering the elemnts to get another elemnt')
         actions = ActionChains(self.driver)
         ele = self.driver.find_element(By.XPATH,read_conf('locators','amazon_sign'))
         actions.move_to_element(ele)
@@ -73,12 +84,14 @@ class TestUI(Base):
     def test_click_all_electronics(self):
         dropdown = self.driver.find_element(By.XPATH,read_conf('locators','am_all'))
         select = Select(dropdown)
+        log.logger.info('searching for electronics in amazon main page')
         select.select_by_visible_text('Electronics')
         time.sleep(3)
 
     def test_search_dell(self):
         self.driver.find_element(By.XPATH,read_conf('locators','am_search_input')).send_keys("dell")
         self.driver.find_element(By.XPATH,read_conf('locators','am_search_button')).click()
+        log.logger.info('searching for DELL in the amazon electronics')
         items = self.driver.find_elements(By.XPATH,read_conf('locators','am_dell_items'))
         for item in items:
             print(item.text)
@@ -87,9 +100,11 @@ class TestUI(Base):
         self.driver.find_element(By.XPATH,read_conf('locators','filter_min')).send_keys('30000')
         self.driver.find_element(By.XPATH, read_conf('locators', 'filter_max')).send_keys('50000')
         self.driver.find_element(By.XPATH,read_conf('locators','filter_button')).click()
+        log.logger.info('applying filters')
 
     def test_five_star(self):
         items = self.driver.find_elements(By.XPATH,read_conf('locators','five_star'))
+        log.logger.info('applying filter for 5 star products')
         for item in items:
             print(item.text)
         print(items)
@@ -97,6 +112,7 @@ class TestUI(Base):
     def test_creating_wishlist(self):
         self.driver.execute_script("window.scrollTo(0,0)")
         actions = ActionChains(self.driver)
+        log.logger.info('creating wish list')
         ele = self.driver.find_element(By.XPATH,read_conf('locators','amazon_sign'))
         actions.move_to_element(ele).click()
         self.driver.find_element(By.XPATH,read_conf('locators','wish_list')).click()
