@@ -1,3 +1,15 @@
-2023-08-25 14:15:18,744-INFO-Launching chrome browser and generating log
-2023-08-25 14:15:19,283-INFO-taking the page title to verify
-2023-08-25 14:15:19,283-INFO-title verified successfully
+2023-08-25 14:25:46,793-INFO-Launching chrome browser and generating log
+2023-08-25 14:25:47,529-INFO-taking the page title to verify
+2023-08-25 14:25:47,530-INFO-title verified successfully
+2023-08-25 14:25:47,532-INFO-searching for amazon.in in google search
+2023-08-25 14:25:47,852-INFO-waiting time
+2023-08-25 14:25:49,238-INFO-genereating all the links
+2023-08-25 14:25:49,490-INFO-getting amazon home screen
+2023-08-25 14:25:52,665-INFO-taking screenshot Online Shopping site in India: Shop Online for Mobiles, Books, Watches, Shoes and More - Amazon.in
+2023-08-25 14:25:52,666-INFO-verifying the title
+2023-08-25 14:25:52,669-INFO-hovering the elemnts to get another elemnt
+2023-08-25 14:25:52,778-INFO-searching for electronics in amazon main page
+2023-08-25 14:25:58,122-INFO-searching for DELL in the amazon electronics
+2023-08-25 14:26:01,758-INFO-applying filters
+2023-08-25 14:26:04,811-INFO-applying filter for 5 star products
+2023-08-25 14:26:04,818-INFO-creating wish list
