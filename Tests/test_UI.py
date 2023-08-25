@@ -41,7 +41,7 @@ class TestUI(Base):
     def test_click_amazon(self):
         self.driver.get(read_conf('urls','amazon'))
         title = self.driver.title
-        capture_screenshot(self.driver,'https://github.com/trinadhravuri/AssignmentUIAmazon/blob/2593ef5a477796c11c52c05503c83016817d9df3/Screenshots')
+        capture_screenshot(self.driver,'../Screenshots/')
         assert title == read_conf('titles','amazon_home')
 
     def test_signin_amazon(self):
