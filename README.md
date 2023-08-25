@@ -13,3 +13,8 @@ I am taking Configurations through ini file config.ini in the tests folder itsel
         which will be READ from the configparser class with method in conftest.py
         the conftest.py file is a file where all the configurations will have
         which pytest automatically takes | we can import them as well.
+
+I am creating a method which takes the screenshot when required having args:
+        driver object and the path where the image file have to be stored and 
+            the image file name is dynamic with the help of current time 
+            which replaces the ':' to "_" with PNG extension
